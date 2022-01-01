@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopTdare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese">
     <link rel="stylesheet" href="./assets/css/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--qr header__navbar-item--separate header__hover">
                             Vào cửa hàng trên ứng dụng TDare-Shop
@@ -105,7 +110,11 @@
                 </nav>
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <laber for="mobile-search-checkbox" class="header__mobile-menu">
+                        <i class="header__mobile-menu-icon fas fa-bars"></i>
+                    </laber>
+                    <input type="text" placeholder="Tìm kiếm" class="all-search"> 
+                    <div class="header__logo hide-on-mobile-tablet">
                         <a href="/" class="header__logo-link">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -282,11 +291,25 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item-active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0" style="display: block;">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -297,7 +320,7 @@
                                     <a href="#" class="category-item__link">Đồ bán chạy</a>
                                 </li>
                                 <li class="category-item" id="free">
-                                    <a href="#" class="category-item__link">Sản phẩm giá 0 VND</a>
+                                    <a href="#" class="category-item__link">Sản phẩm giá tốt</a>
                                 </li>
                                 <li class="category-item" id="card">
                                     <a href="#" class="category-item__link">Nạp thẻ các loại</a>
@@ -305,8 +328,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__laber">Sắp xếp theo</span>
                             <button class="home-filter__btn btn btn--primary">Phổ biến</button>
                             <button class="home-filter__btn btn">Mới nhất</button>
@@ -337,15 +360,57 @@
                                 </div>
                             </div>
                         </div>
+
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Đồ bán chạy</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Sản phẩm giá 1k</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Nạp thẻ và dịch vụ games</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Liên hệ trợ giúp</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Các ưu đãi liên quan</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="#" class="mobile-category__link">Phát triển</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="home-product product-active">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang1test.png);"></div>
                                         <h4 class="home-product-item__name">Nhẫn phong cách hiphop sành điệu thời trang cho nam nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">12.000đ/c</span>
+                                            <span class="home-product-item__price-curren">6.000đ/c</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -375,13 +440,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang2.png);"></div>
                                         <h4 class="home-product-item__name">Dây chuyền ngắn mặt hình bướm phong cách hip hop 2021 hàng mới dành cho bạn nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">22.000đ</span>
-                                            <span class="home-product-item__price-curren">15.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -411,13 +476,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang3.png);"></div>
                                         <h4 class="home-product-item__name">Vòng cổ phối mặt tròn khắc hình mặt trăng mặt trời phong cách Harajuku cổ điển trẻ trung</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">32.000đ</span>
-                                            <span class="home-product-item__price-curren">16.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -447,13 +512,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang4.png);"></div>
                                         <h4 class="home-product-item__name">Khuyên Tai Đơn, Vòng Tai Đơn Phong Cách Cho Nam (1 chiếc) - Bim's House</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">35.000đ</span>
-                                            <span class="home-product-item__price-curren">14.000đ/c</span>
+                                            <span class="home-product-item__price-curren">4.000đ/c</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -483,13 +548,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang5.png);"></div>
                                         <h4 class="home-product-item__name">Vòng cổ mặt hình đôi cánh thiên thần tình bạn</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">26.000đ</span>
-                                            <span class="home-product-item__price-curren">17.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -519,13 +584,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang6.png);"></div>
                                         <h4 class="home-product-item__name">Bộ bao 2 ngón tay chuyên dùng chơi game mobile chống mồ hôi tay bằng sợi carbon</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">25.000đ</span>
-                                            <span class="home-product-item__price-curren">15.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -555,13 +620,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang7.jpg);"></div>
                                         <h4 class="home-product-item__name">Vòng đeo cổ đẹp dành cho cặp đôi</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">34.000đ</span>
-                                            <span class="home-product-item__price-curren">15.000đ/c</span>
+                                            <span class="home-product-item__price-curren">9.000đ/c</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -591,13 +656,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/notify2.png);"></div>
                                         <h4 class="home-product-item__name">Dây Chuyền Hợp Kim Mặt Hình Mặt Trăng Xinh Xắn Dễ Thương Cho Nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">23.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -627,13 +692,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang8.png);"></div>
                                         <h4 class="home-product-item__name">Vòng cổ Thiết Kế Đơn Giản Thời Trang Theo Phong Cách Hàn Quốc Cho Nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">40.000đ</span>
-                                            <span class="home-product-item__price-curren">15.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -663,13 +728,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang9.png);"></div>
                                         <h4 class="home-product-item__name">Dây chuyền kim loại dày mặt hình trái tim phong cách retro âu mỹ thời trang 2021 dành cho nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">45.000đ</span>
-                                            <span class="home-product-item__price-curren">18.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -699,13 +764,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang10.jpg);"></div>
                                         <h4 class="home-product-item__name">Vòng cổ mặt hình gấu bằng inox nhiều màu sắc phong cách hip hop Hàn Quốc cá tính</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -735,13 +800,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang11.png);"></div>
                                         <h4 class="home-product-item__name">Vòng tay dạng hở họa tiết lá thời trang Hàn Quốc làm quà tặng ngày của mẹ/ valentine</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">30.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -771,13 +836,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang12.jpg);"></div>
                                         <h4 class="home-product-item__name">Dây chuyền mặt hình tròn họa tiết gấu thời trang phong cách hiphop</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -807,13 +872,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang13.jpg);"></div>
                                         <h4 class="home-product-item__name">Dao Cắt Giấy Đa Năng Tiện Dụng</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -843,13 +908,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang14.jpg);"></div>
                                         <h4 class="home-product-item__name">Lót chuột hình tròn đế cao su chống trượt nhiều họa tiết</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">30.000đ</span>
-                                            <span class="home-product-item__price-curren">15.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -879,13 +944,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang15.jpg);"></div>
                                         <h4 class="home-product-item__name">Vòng chân dạng bện thủ công màu đen phong cách dân tộc kiểu dáng đơn giản dễ phối đồ thời trang cho nam và nữ</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -915,13 +980,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang16.jpg);"></div>
                                         <h4 class="home-product-item__name">Vòng Tay Thép Titan Không Phai Thiết Kế Hình Gấu Phong Cách Hip Hop Cá Tính</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">40.000đ</span>
-                                            <span class="home-product-item__price-curren">16.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -951,13 +1016,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang17.jpg);"></div>
                                         <h4 class="home-product-item__name">Nhẫn bạc 925 hình chim cú đính pha lê thời trang</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">11.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -987,13 +1052,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang18.jpg);"></div>
                                         <h4 class="home-product-item__name">Lót chuột, bàn di chuột hình tròn 20x20 cm chống trượt, chống thấm nước</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">16.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -1023,13 +1088,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang19.jpg);"></div>
                                         <h4 class="home-product-item__name">Bút xóa kéo thiết kế hình bàn chân mèo đáng yêu</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -1059,13 +1124,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang20.jpg);"></div>
                                         <h4 class="home-product-item__name">Móc khóa điện thoại tạo hình tháp Eiffel Pháp độc đáo</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">20.000đ</span>
-                                            <span class="home-product-item__price-curren">10.000đ</span>
+                                            <span class="home-product-item__price-curren">6.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__liked">
@@ -1098,12 +1163,696 @@
                             </div>
                         </div>
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang21.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nam Nữ For Full Trắng</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">190.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang22.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nam Nữ MC Trắng Gót Đen</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">280.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang23.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nam Nữ MC Trắng Gót Đen</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">180.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang24.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Van Vault Đen Nam Nữ</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">210.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang21.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Van Valut CLS Đen Nam Nữ</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999k</span>
+                                            <span class="home-product-item__price-curren">290.000k</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang25.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nam Nữ Ngô Thắng For Full Trắng</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">210.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang26.jpg);"></div>
+                                        <h4 class="home-product-item__name">[ Full Box ] Giày MIB Ny Chữ Ny Đen</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">290.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang27.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao JD Kem Cổ Đỏ Cao nam Nữ</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">270.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang28.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nam Nữ For Dior</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">270.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang29.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nữ Độn Đế GC Kem Môi</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">295.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang30.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày thể thao JD cao cam nam nữ</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">280.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang31.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Ngô Thắng JD Cao Mid Trắng Đen Nam Nữ</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">290.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang32.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Ngô Thắng MIB NY Chữ Ny Nâu Nam</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">310.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang33.jpg);"></div>
+                                        <h4 class="home-product-item__name">Giày Thể Thao Nữ Ngô Thắng For 7 Màu</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">280.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang34.jpg);"></div>
+                                        <h4 class="home-product-item__name">Áo thun dài tay nam GAUXA ATINO vải thun cao cấp chuẩn form AN0505</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">140.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite" style="background: red">
+                                            <i class="fas fa-check"></i>
+                                            <span>Mall</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang35.jpg);"></div>
+                                        <h4 class="home-product-item__name">Áo thun dài tay nam DENIM ATINO vải thun cao cấp chuẩn form AN0508</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">140.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite" style="background: red">
+                                            <i class="fas fa-check"></i>
+                                            <span>Mall</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang36.jpg);"></div>
+                                        <h4 class="home-product-item__name">Áo thun dài tay nam MORE ATINO vải thun cao cấp chuẩn form AN0503</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">140.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite"  style="background: red">
+                                            <i class="fas fa-check"></i>
+                                            <span>Mall</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang37.jpg);"></div>
+                                        <h4 class="home-product-item__name">Áo Khoác Da Lộn Bomber 3 Sọc Nam Nữ ATINO Hàn Quốc Phong Cách Trẻ Trung Chuẩn Form AD3.8015</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">250.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite" style="background:red">
+                                            <i class="fas fa-check"></i>
+                                            <span>Mall</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a href="#" class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(./assets/css/img/hang38.jpg);"></div>
+                                        <h4 class="home-product-item__name">Áo Khoác Da Lộn Bomber 3 Sọc Nam Nữ ATINO Hàn Quốc Phong Cách Trẻ Trung Chuẩn Form AD3.8014</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">999.999đ</span>
+                                            <span class="home-product-item__price-curren">260.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="home-product-item__star-gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">15 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Tdare</span>
+                                            <span class="home-product-item__origin-name">Trung Quốc</span>
+                                        </div>
+                                        <div class="home-product-item__favourite" style="background:red">
+                                            <i class="fas fa-check"></i>
+                                            <span>Mall</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">40%</span>
+                                            <span class="home-product-item__sale-off-laber">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="home-product">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/thetuan.jpg); 
                                         background-size: contain ;"></div>
@@ -1140,7 +1889,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/thethang.jpg);background-size: contain;"></div>
                                         <h4 class="home-product-item__name">Thẻ tháng game Free Fire</h4>
@@ -1176,7 +1925,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img" style="background-image: url(./assets/css/img/napkc.jpg);background-size: contain;"></div>
                                         <h4 class="home-product-item__name">Nạp Kim Cương game Free Fire</h4>
@@ -1259,9 +2008,9 @@
             </div>
         </div>
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1275,7 +2024,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1289,7 +2038,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1303,7 +2052,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1326,7 +2075,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/css/img/QRshopee.jpg" alt="QR Download" class="footer__download-qr">
@@ -1343,8 +2092,8 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <div class="grid">
-                    <div class="grid__row footer__bottom-border">
+                <div class="grid wide">
+                    <div class="row footer__bottom-border">
                         <div class="footer__bottom-on">
                             <ul class="footer__bottom-on-list">
                                 <li class="footer__bottom-on-list-item">© 2021 Shopee. Tất cả các quyền được bảo lưu.</li>
@@ -1373,8 +2122,8 @@
                     </div>
                 </div>
                 <div class="footer__bottom-below">
-                    <div class="grid">
-                        <div class="grid__row">
+                    <div class="grid wide">
+                        <div class="row">
                             <div class="footer__bottom-policy">
                                 <ul class="footer__bottom-policy-list">
                                     <li class="footer__bottom-policy-list-item">
